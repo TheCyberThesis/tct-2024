@@ -1,0 +1,27 @@
+name: "BOFOBO"
+author: "Strangek"
+category: "pwn"
+description: "Is one byte enough??"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 8000
+
+image: ./src
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{wh0_w0nd3r3d_0n3_by73_c4n_t4k3_y0u_7h15_f4r}",
+        data: "case_sensitive",
+    }
+state: visible
+version: "0.1"

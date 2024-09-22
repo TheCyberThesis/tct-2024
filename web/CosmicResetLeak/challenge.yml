@@ -1,0 +1,28 @@
+name: "CosmicResetLeak"
+author: "Omega"
+category: "web"
+description: "Find the reset key hidden deep within the encrypted signals of the James Webb Telescope. Crack the code to reveal the secrets it holds beyond the stars."
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{JW5T_r3$et_K3y_X42_unBrut3d}",
+        data: "case_sensitive",
+    }
+
+files:
+   - dist/server.js
+
+state: visible
+version: "0.1"

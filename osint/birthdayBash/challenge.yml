@@ -1,0 +1,24 @@
+name: "birthday bash"
+author: "inumaki"
+category: "osint"
+description: "Curious about what my buddy has planned for his birthday! p.s we share the same birthday btw."
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/new.jpg
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{c0ngr4t5_t1g3r_y0u_s70pp3d_7h3_4774ck}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

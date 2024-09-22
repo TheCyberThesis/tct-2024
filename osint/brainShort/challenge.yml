@@ -1,0 +1,21 @@
+name: "Brain Short"
+author: "Pickachu"
+category: "Osint"
+description: "Oh no!! I just got stucked. Shit!!!!\nHelp………Can you find the flag for me?"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{y0u_g0t_w@y_out}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

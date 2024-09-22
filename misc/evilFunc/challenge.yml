@@ -1,0 +1,28 @@
+name: "EvilFunc"
+author: "ArcusTen"
+category: "misc"
+description: "Can you make the ev*l bypass??"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+files:
+    - dist/main.py
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{3v4l_3xpl01t3d_succ3ssfu11Y_2004}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

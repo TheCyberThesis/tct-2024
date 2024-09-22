@@ -1,0 +1,26 @@
+
+name: "Checkmate"
+author: "Strangek"
+category: "crypto"
+description: "no human would play like this lol"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+   - dist/output.pgn
+
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{ch355_1s_g00d_f0r_m1nd_a5_w3ll_a5_3ncryp710n}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

@@ -1,0 +1,24 @@
+name: "Perfect"
+author: "Pickachu"
+category: "Stegno"
+description: "Real art lies not just in the image, but in the secrets it keeps."
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+files:
+    - dist/perfect.jpg
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{1m_4_5t3g0_m4st3r}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

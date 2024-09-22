@@ -1,0 +1,21 @@
+name: "Mail Hub"
+author: "Pickachu"
+category: "osint"
+description: "Damn it….\nAuthor forgot the email address, but damn sure that it is placed somewhere on the server.\nAuthor gets lazy sometimes. Can you help the author in finding email???"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{hecallsmedramchoo@gmail.com}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

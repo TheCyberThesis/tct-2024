@@ -1,0 +1,20 @@
+name: "ELON"
+author: "Strangek"
+category: "OSINT"
+description: "Where is this interview recorded???? \n Flag Format Eg: `TCT{9700_Aladin_Street,New_York}` \nLink: https://www.youtube.com/watch?v=s9mczdODqzo"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{245_Ramona_Street,Palo_Alto}",
+        data: "case_sensitive",
+    }
+state: visible
+version: "0.1"

@@ -1,0 +1,25 @@
+name: "Echoes of secret"
+author: "Pickachu"
+category: "Stegno"
+description: "Uncover the whispers hidden in the audio's echoes—find the secret concealed within the sound"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+
+files:
+    - -dist/final.wav
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{I_l0b3_t0_h!d3}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

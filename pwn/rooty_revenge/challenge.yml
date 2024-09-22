@@ -1,0 +1,28 @@
+name: "Rooty Revenge"
+author: "Strangek"
+category: "pwn"
+description: "Escalating privileges and bypassing all protections, let's see who wins this time?!"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 8000
+
+image: ./src
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{p13s_5t4ck3d_1n_4_p13_5t4ck_5t4ck1n9_p13_p1l35}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

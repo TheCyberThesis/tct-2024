@@ -1,0 +1,26 @@
+
+name: "Wizard Shark"
+author: "Taha Nynth"
+category: "Forensics"
+description: "The flag packet has been encrypted. Find the key used for decryption; it should be somewhere around here. The key is the most essential element to decryption anyways..."
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/chal.zip
+
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{b1ng0?}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

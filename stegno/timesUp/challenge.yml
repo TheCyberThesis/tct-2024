@@ -1,0 +1,24 @@
+name: "Time's Up"
+author: "Pickachu"
+category: "Stegno"
+description: "Someone was trying to get into the system. Pickachu was successful in getting the server log but now feeling lazy to continueee. So try your luck and get the flag. xD"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+files:
+    - dist/server.log
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{HIDDEN}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

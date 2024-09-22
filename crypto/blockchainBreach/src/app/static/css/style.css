@@ -1,0 +1,119 @@
+
+body {
+    
+        background-image: url("/static/images/blockchain.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+        
+        color: #0e2cdb;
+        font-family: Arial, sans-serif; 
+        z-index: -100;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    top: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container h1 {
+    text-align: center;
+    font-size: 70px;
+    color: rgb(252, 254, 255);
+    font-weight: 600;
+}
+
+.container label{
+    color: #fff;
+    padding: 10px;
+}
+
+.container a {
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 24px;
+    border: 5px solid #fff;
+    padding: 14px 70px; 
+}
+
+button {
+    background-color: #1546cf;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #14e214;
+}
+
+input, table {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #faf6f6;
+
+
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+}
+.contact-us {
+    text-align: center;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.contact-us h2 {
+    color: rgb(252, 254, 255);
+    font-size: 36px;
+    margin-bottom: 10px;
+    
+}
+
+.contact-us p {
+    color: #fefeff;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.discord-link {
+    text-decoration: none;
+    display: inline-block;
+    color: #2132cc;
+    font-size: 20px;
+    border: 2px solid #243cc0;
+    padding: 10px ;
+    border-radius: 5px;
+    background-color: #f6f7f8; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.discord-link:hover {
+    background-color: #426aec; 
+    border-color: #ffffff;
+    color: #fff;
+}

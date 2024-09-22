@@ -1,0 +1,24 @@
+name: "Anabella's secret"
+author: "Pickachu"
+category: "Stegno"
+description: "The doll hide the secret which no man is able to know about a woman "
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+files:
+    - dist/secret.jpeg
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{3v3ry_girl_is_a_doll_3ith3r_a_barbi3_or_anab3lla}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

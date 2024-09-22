@@ -1,0 +1,27 @@
+name: "PasStack"
+author: "Strangek"
+category: "pwn"
+description: "I heard there's alot buzz about format in the town??!!!"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 8000
+
+image: ./src
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{ahhhhhhhhh_y0u_4r3_s0000000_g00ddd}",
+        data: "case_sensitive",
+    }
+state: visible
+version: "0.1"

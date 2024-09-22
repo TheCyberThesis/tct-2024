@@ -1,0 +1,29 @@
+
+name: "Signature Heist"
+author: "Alishba Malik"
+category: "crypto"
+description: "Remember, my dear criminals, it's all about the details. In the greatest heist, the smallest slip-up can cost you everything. You're not just here to play; you're here to infiltrate, decode, and conquer. Imagine you're deciphering the codes to the Royal Mint of Spain, with nothing but your wits and a set of cryptic numbers. The mission is to forge the perfect key, unlock the vault, and escape with the prize.\nAs the Professor once said, 'In this heist, every second counts. Every decision is life or death.'\nPrecision is your weapon; every calculation, your lifeline. Create the signature that matches the vault's lock, and the treasure is yours. Fail, and the system will know you for the imposter you are.\nThis isn’t just about brains; it’s about nerve, tenacity, and the thrill of outsmarting the system. Are you ready to pull off the ultimate heist?"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+files:
+   - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{u_13v3l3d_UP_70_4_Pr0f3550R!!!}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

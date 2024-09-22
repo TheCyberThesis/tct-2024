@@ -1,0 +1,28 @@
+name: "Rooty"
+author: "Strangek"
+category: "pwn"
+description: "Escalating Privileges Through BOF????!!!"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 8000
+
+image: ./src
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{s3t_u1D_h3lp3d_nooooooo???????}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

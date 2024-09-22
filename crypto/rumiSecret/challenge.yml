@@ -1,0 +1,24 @@
+name: "Rumi's Secret"
+author: "Pickachu"
+category: "crypto"
+description: "A mysterious parchment, hidden for centuries in Konya, bears Rumi's final secret.\nThe mystical poet used some kind of binary and encrypted his message ancient cipher, intertwined like a Sufi's dance.\nDecode the text to unveil wisdom that transcends time. Can you unravel the layers and hear the words of Rumi?"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+files:
+    - src/Binary.txt
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{Everything_in_the_universe_is_within_you}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

@@ -1,0 +1,21 @@
+name: "Starter"
+author: "ArcusTen"
+category: "web"
+description: "We are just getting started....\nURL: `http://ctf.thecyberthesis.com:31000`\nWARNING: Do not open the URL, your computer will not like it. :("
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{it_w4s_EZ?_OKK_G00D_LuCK_4_Next_CH4L}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

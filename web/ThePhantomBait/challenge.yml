@@ -1,0 +1,25 @@
+name: "ThePhantomBait"
+author: "Omega"
+category: "web"
+description: "The bait is set, hidden in the shadows, waiting for the sharpest minds. Find the place where the heart lies, and send the right message. Only then will the path forward reveal itself."
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{7h3_B4i7_w4s_Us3ful}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

@@ -1,0 +1,23 @@
+name: "TheCyberThesis"
+author: "Strangek"
+category: "Reversing"
+description: "Beleive me intended way is much much easier!!!!!!!"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/thecyberthesis.apk
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{X55_7hr0u9h_4ppl1c4710n_TCT_1s_g3771n9_0u774_h4nd555}",
+        data: "case_sensitive",
+    }
+state: visible
+version: "0.1"

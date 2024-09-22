@@ -1,0 +1,28 @@
+name: "East Flow"
+author: "Strangek"
+category: "pwn"
+description: "Easiest Buffer Overflow Known To The Mankind :)"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 8000
+
+image: ./src
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{c0ngr475_0n_y0ur_f1r57_buff3r_0v3rfl0w}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

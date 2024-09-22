@@ -1,0 +1,25 @@
+
+name: "Wizard Shark 2"
+author: "Taha Nynth"
+category: "Forensics"
+description: "A picture was sent. **RETRIEVE IT!!!"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{1_am_7h3_s70rm_7ha7_1z_approach1ng}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

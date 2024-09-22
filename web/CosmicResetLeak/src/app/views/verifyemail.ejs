@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Reset Leak</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light refined-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">TCT CTF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" id="loginBtn" href="/login">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container mt-3">
+        <div class="container mt-5">
+            <div class="row justify-content-center align-items-center" style="min-height: calc(100vh - 190.4px);">
+                <div class="reg-box col-md-6 col-lg-5">
+                    <div class="registration-form">
+                        
+                        <% if (typeof successverifymsg !=='undefined' && successverifymsg) { %>
+                                    <div class="successful-verified">
+                                        <%- successverifymsg %>
+                                    </div>
+                        <% } %>
+                        <% if (typeof preverifymsg !=='undefined' && preverifymsg) { %>
+                                    <div class="already-verified">
+                                        <%- preverifymsg %>
+                                    </div>
+                        <% } %>
+                        <% if (typeof brokenverifymsg !=='undefined' && brokenverifymsg) { %>
+                                    <div class="invalid-link">
+                                        <%- brokenverifymsg %> 
+                                    </div>
+                        <% } %>
+                        <% if (typeof expiredverifymsg !=='undefined' && typeof token !=='undefined' && token && expiredverifymsg) { %>
+                            <div class="expired-link">
+                                <span><%- expiredverifymsg %></span>
+                                <form action="/resend-verification" method="post" style="display: inline;">
+                                    <input type="hidden" name="token" value="<%= token %>">
+                                    <button type="submit" class="resend-link-btn">here</button>
+                                </form>
+                                <span><%- secondexpiredverifymsg %></span>
+                            </div>
+                          <% } %>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Select the parent div
+            const parent = document.querySelector('div.registration-form');
+
+            if (parent.querySelector('.successful-verified')) {
+                // Change the background color of the parent
+                parent.classList.add('successful-verified-msg');
+            }
+
+            if (parent.querySelector('.already-verified')) {
+                // Change the background color of the parent
+                parent.classList.add('already-verified-msg');
+            }
+            if (parent.querySelector('.invalid-link')) {
+                // Change the background color of the parent
+                parent.classList.add('invalid-link-msg');
+            }
+            if (parent.querySelector('.expired-link')) {
+                // Change the background color of the parent
+                parent.classList.add('expired-link-msg');
+            }
+
+
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+name: "FirstBugBounty"
+author: "Omega"
+category: "web"
+description: "Only admin has access to the flag"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+files:
+    - dist/server.js
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{7h3_F14g_is_Y0ur_Firs7_B0un7y}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

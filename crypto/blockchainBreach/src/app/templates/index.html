@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Vault Challenge</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <style type="text/css">
+        #tsparticles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+        }
+        .logo {
+            max-width: 500px;
+            height: max-content;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="/static/images/image.png" alt="Blockchain Vault Logo" class="logo">
+    </div>
+    <div class="container">
+        <h1>Blockchain Vault</h1>
+        <form id="load-form">
+            <input type="file" id="file-input" accept=".json">
+            <button type="button" onclick="loadBlockchain()">Load Blockchain</button>
+        </form>
+        <table id="blockchain-table">
+            <thead>
+                <tr>
+                    <th>Block ID</th>
+                    <th>Previous Hash</th>
+                    <th>Timestamp</th>
+                    <th>Transactions</th>
+                    <th>Hash</th>
+                    <th>Salt</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <form id="hash-form">
+            <label for="hash">Enter Hash: </label>
+            <input type="text" id="hash" name="hash" required>
+            <br><br>
+            <button type="button" onclick="checkHash()">Submit</button>
+        </form>
+        <p id="result"></p>
+        <script>
+            function loadBlockchain() {
+                const fileInput = document.getElementById('file-input');
+                const formData = new FormData();
+                formData.append('file_path', fileInput.files[0].name);
+                fetch('/load_blockchain', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const blockchain = data.blockchain;
+                        const tableBody = document.getElementById('blockchain-table').querySelector('tbody');
+                        tableBody.innerHTML = '';
+                        blockchain.forEach(block => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${block.block_id}</td>
+                                <td>${block.previous_hash}</td>
+                                <td>${block.timestamp}</td>
+                                <td>${block.transactions}</td>
+                                <td>${block.hash}</td>
+                                <td>${block.salt}</td>
+                            `;
+                            tableBody.appendChild(row);
+                        });
+                    } else {
+                        alert(data.error);
+                    }
+                });
+            }
+
+             function checkHash() {
+            const hash = document.getElementById('hash').value;
+            const formData = new FormData();
+            formData.append('hash', hash);
+            fetch('/check_hash', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultDiv = document.getElementById('result');
+                resultDiv.textContent = data.message;
+                resultDiv.style.color = data.success ? 'white' : 'red';
+            });
+        }
+    </script>
+    </div>
+    <div class="contact-us">
+        <h2>Contact Us</h2>
+        <p>Join our community on Discord:</p>
+        <a href="https://discord.gg/R7Tv43rF" target="_blank" class="discord-link">Join our Discord Server</a>
+    </div>
+</body>
+</html>

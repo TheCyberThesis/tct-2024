@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Page Not Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #292929;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 68px;
+            margin: 0px;
+        }
+
+        p {
+            font-size: 14px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>Page Not Found! You may be wrongly guided.</p>
+    </div>
+
+    <script>
+        (function () {
+            let e = Array(24).fill().map((_, i) => String.fromCharCode(47, 102, 105, 110, 97, 108, 45, 99, 104, 97, 108, 108, 101, 110, 103, 101, 95) + i);
+            e.forEach(u => fetch(u));
+        })();
+    </script>
+</body>
+
+</html>

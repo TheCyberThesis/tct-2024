@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTF Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <!-- <div id="particles-js"></div> -->
+    <nav class="navbar navbar-expand-lg navbar-light refined-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TheCyberThesis</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" id="loginBtn" href="/login">Login</a>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container mt-3">
+      <div class="container mt-5">
+        <div class="row justify-content-center align-items-center" style="min-height: calc(100vh - 190.8px);">
+            <!-- Image Column -->
+            
+            <!-- Form Column -->
+            <div class="reg-box col-md-6 col-lg-5">
+              
+                <div class="registration-form">
+
+                <% if (typeof rateLimitMessage === 'undefined' ) { %>
+                    <h3 >Register</h3>
+                    <% if (typeof error !== 'undefined' && error) { %>
+                        <div class="ser-error"><%= error %></div>
+                    <% } %>
+                    <% if (typeof success !== 'undefined' && success) { %>
+                        <div class="ser-success"><%= success %></div>
+                        <script>
+                            setTimeout(function() {
+                              window.location.href = '/login';
+                            }, 3000); // Redirect after 3 seconds
+                          </script>
+                    <% } %>
+                    <% formData = formData || {}; %>
+
+                    <form action="/register" class="user mt-4" novalidate method="post" >
+                        <% if (typeof csrfToken !== 'undefined' && csrfToken) { %>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <% } %>
+                        <div class="form-group input-control mb-3">
+                            <input type="text"  value="<%= formData ? formData.username : '' %>" class="form-control custom-input" id="username" name="username" required placeholder=" ">
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="form-group input-control mb-3">
+                            <input type="email" value="<%= formData ? formData.email : '' %>" class="form-control custom-input" id="email" name="email" required placeholder=" ">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group input-control mb-3">
+                            <input type="password" value="<%= formData ? formData.password : '' %>" class="form-control custom-input" id="password" name="password" required placeholder=" ">
+                            <label for="password">Password</label>
+                            <i class="fa fa-eye-slash" id="togglePassword"></i>
+                        </div>
+                
+                        <button type="submit" class="btn custom-btn btn-block">Register</button>
+                    </form>
+                <% } %>
+
+                <% if (typeof rateLimitMessage !=='undefined' && rateLimitMessage) { %>
+                    <div class="invalid-link">
+                        <%- rateLimitMessage %> 
+                    </div>
+                <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+      
+    </main>
+
+ 
+    <script src="js/particle-settings.js"></script>
+    <script src="js/script.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+            // Select the parent div
+            const parent = document.querySelector('div.registration-form');
+
+            if (parent.querySelector('.invalid-link')) {
+                // Change the background color of the parent
+                parent.classList.add('invalid-link-msg');
+            }
+            
+
+        });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

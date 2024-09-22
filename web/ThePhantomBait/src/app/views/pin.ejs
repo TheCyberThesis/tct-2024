@@ -1,0 +1,125 @@
+<!-- views/pin.ejs -->
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/54xbvvn45gv4v3kv4gv3k4v3kv3k">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            margin: 0;
+        }
+        .pin-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .pin-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 20px;
+        }
+        .pin-inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .pin-inputs input {
+            width: 50px;
+            height: 50px;
+            margin: 0 5px;
+            font-size: 20px; 
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+        }
+        .pin-inputs input:focus {
+            outline: none;
+            border-color: #000000; 
+        }
+        .error-message {
+            color: #ff0000;
+            background-color: #ffebeb;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            width: 100%;
+            font-size: 14px;
+            text-align: center;
+        }
+        .submit-btn {
+            background-color: #000000; 
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        .submit-btn:hover {
+            background-color: #333333; 
+        }
+    </style>
+    <title>Enter PIN</title>
+</head>
+<body>
+    <div class="pin-container">
+        <h1>Enter 4-digit PIN</h1>
+        <% if (error) { %>
+            <div class="error-message"><%= error %></div>
+        <% } %>
+        <form method="POST" action="/blind?place=heart">
+            <div class="pin-inputs">
+                <input type="text" maxlength="1" name="pin1" required id="pin1">
+                <input type="text" maxlength="1" name="pin2" required id="pin2">
+                <input type="text" maxlength="1" name="pin3" required id="pin3">
+                <input type="text" maxlength="1" name="pin4" required id="pin4">
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const inputs = document.querySelectorAll('.pin-inputs input');
+
+            inputs.forEach((input, index) => {
+                input.addEventListener('input', () => {
+                    if (input.value.length === 1 && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                });
+
+                input.addEventListener('keydown', (event) => {
+                    if (event.key === 'Backspace' && input.value.length === 0 && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+
+                input.addEventListener('paste', (event) => {
+                    event.preventDefault();
+                });
+            });
+
+            // Ensure that users can't skip any box
+            inputs.forEach((input, index) => {
+                input.addEventListener('focus', () => {
+                    if (index > 0 && inputs[index - 1].value === '') {
+                        inputs[index - 1].focus();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

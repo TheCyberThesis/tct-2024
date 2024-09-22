@@ -1,0 +1,28 @@
+name: "PhantoByte"
+author: "Omega"
+category: "web"
+description: "Nothing. What else this means?"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+files:
+    - dist/server.js
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{Succ3ssfully_3xpl0it3d_th3_vuln3rability!}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

@@ -1,0 +1,49 @@
+/* static/css/style.css */
+
+* {
+    font-family: poppins;
+}
+
+body {
+    background-color: #000000;
+    background-image: url("../img/bg.jpg");
+    background-size: cover; /* To Cover the entire background */
+    background-position: center; /* Center the background image */
+    margin: 0;
+    display: flex;           /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;           /* Make the body full height */
+    text-align: center;      /* Center text within each element */
+}
+
+h1, h2, h3 {
+    color: #e9e7e7;
+}
+
+a {
+    text-decoration: none;
+    color: #38e099;
+}
+
+a:hover {
+    color: yellow;
+}
+
+form {
+    margin: 20px 0;
+}
+
+button {
+    background-color: #38e099;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: yellow;
+    color: black;
+}

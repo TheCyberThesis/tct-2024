@@ -1,0 +1,1 @@
+Hint: If your flag does not work, think about how to style the output of console.log

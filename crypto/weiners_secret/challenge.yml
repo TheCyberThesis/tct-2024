@@ -1,0 +1,25 @@
+
+name: "Weiner's secret"
+author: "Alishba Malik"
+category: "crypto"
+description: "Weiner has you; reveal his secret and, in return, get the flag."
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{N0w_u_kn0w_W31n3R_53cr37}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

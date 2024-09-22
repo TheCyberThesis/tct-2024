@@ -1,0 +1,25 @@
+name: "Mystery Box"
+author: "Pickachu"
+category: "Reversing"
+description: "What's Inside?"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{damn_uh_g0t_it}",
+        data: "case_sensitive",
+    }
+
+
+state: visible
+version: "0.1"

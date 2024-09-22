@@ -1,0 +1,23 @@
+name: "Strange"
+author: "Strangek"
+category: "Reversing"
+description: "I don't if it's a good idea to write one line of code :)"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{1r0n_m4n_h45_70_d13:(}",
+        data: "case_sensitive",
+    }
+state: visible
+version: "0.1"

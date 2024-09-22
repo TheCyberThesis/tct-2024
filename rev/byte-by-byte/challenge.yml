@@ -1,0 +1,23 @@
+name: "Byte By Byte"
+author: "Strangek"
+category: "Reversing"
+description: "Not in the memory???? Then where is it????"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{8y73_8y_8y73_l0l}",
+        data: "case_sensitive",
+    }
+state: visible
+version: "0.1"

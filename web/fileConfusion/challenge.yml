@@ -1,0 +1,28 @@
+name: "File Confusion"
+author: "ArcusTen"
+category: "web"
+description: "You have heard about file inclusion, ever heard about file confusion?"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+files:
+    - dist/chal.zip
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{p0lYgl0t_WitH_Y4ML_D3seRia1iz4Ti0n}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Reset Leak</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light refined-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">TCT CTF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" id="loginBtn" href="/login">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container mt-3">
+        <div class="container mt-5">
+            <div class="row justify-content-center align-items-center" style="min-height: calc(100vh - 190.8px);">
+                <div class="reg-box col-md-6 col-lg-5">
+                    <div class="registration-form">
+                        <% if (typeof expiredverifymsg !=='undefined' && expiredverifymsg) { %>
+                            <div class="expired-link">
+                                <span><%- expiredverifymsg %></span>
+                            </div>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                            // Select the parent div
+                                            const parent = document.querySelector('div.registration-form');
+
+                                            if (parent.querySelector('.expired-link')) {
+                                                // Change the background color of the parent
+                                                parent.classList.add('expired-link-msg');
+                                            }
+
+
+                                        });
+                            </script>
+                          <% } %>
+                                <% if (typeof errormsg !=='undefined' && errormsg) { %>
+                                    <div class="invalid-link">
+                                        <%- errormsg %>
+                                    </div>
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", () => {
+                                            // Select the parent div
+                                            const parent = document.querySelector('div.registration-form');
+
+
+
+
+                                            if (parent.querySelector('.invalid-link')) {
+                                                // Change the background color of the parent
+                                                parent.classList.add('invalid-link-msg');
+                                            }
+
+                                        });
+                                    </script>
+                                    <% } %>
+                                        <% if (typeof option !=='undefined' && option==='username' ) { %>
+                                            <!-- Form for displaying username -->
+                                            <div class="usernamedisplay">
+                                                <h5 style="text-align: center; color: #6d6d6d;">Here is your username
+                                                </h5>
+                                                <br>
+                                                <h1 style="text-align: center;color: #444444;"><strong>
+                                                        <%= username %>
+                                                    </strong></h1>
+                                                <br>
+                                                <p style="color: #6d6d6d; text-align: center">If this is not what you
+                                                    were expecting, please <a href="/contact">contact support</a>.</p>
+                                            </div>
+
+                                            <% } else if (typeof option !=='undefined' && option==='password' ) { %>
+                                                <!-- Form for resetting password -->
+                                                <h3 style="margin-bottom: 40px;">Reset Password</h3>
+                                                <% if (typeof error !=='undefined' && error) { %>
+                                                    <div class="ser-error">
+                                                        <%= error %>
+                                                    </div>
+                                                    <% } %>
+                                                        <% if (typeof success !=='undefined' && success) { %>
+                                                            <div class="ser-error">
+                                                                <%= success %>
+                                                            </div>
+                                                            <% } %>
+                                                                <form action="/updatePassword?token=<%= token %>"
+                                                                    method="post" novalidate>
+                                                                    <div class="form-group input-control mb-3">
+                                                                        <input type="password"
+                                                                            class="form-control custom-input"
+                                                                            id="newPassword" name="password" required
+                                                                            placeholder=" ">
+                                                                        <label for="newPassword">New Password</label>
+                                                                    </div>
+                                                                    <div class="form-group input-control mb-3">
+                                                                        <input type="password"
+                                                                            class="form-control custom-input"
+                                                                            id="confirmNewPassword" name="newpassword"
+                                                                            required placeholder=" ">
+                                                                        <label for="confirmNewPassword">Confirm New
+                                                                            Password</label>
+                                                                    </div>
+                                                                    <button type="submit"
+                                                                        class="btn custom-btn btn-block">Reset
+                                                                        Password</button>
+                                                                </form>
+                                                                <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+<script src="js/script.js"></script>
+
+</html>

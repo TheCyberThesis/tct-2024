@@ -1,0 +1,30 @@
+
+name: "The Blockchain breach"
+author: "Alishba Malik"
+category: "crypto"
+description: "Cipherium’s blockchain is in fragments, a digital graveyard hiding something far more valuable than data. The vault is sealed, and only those who can navigate the cryptic maze will discover 'The Key.' The blocks hold whispers, and somewhere among them lies the path forward—if you can find it. The legend speaks of a salt, the cornerstone of Cipherium’s encrypted empire. Crack the code, unlock the vault, and the flag will be yours—if you're clever enough to uncover the secret buried within. Remeber, if the salt is shared, unite the fragments of their identity and forge a singular mark from their union."
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+files:
+    - dist/chal.zip
+
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{br34ch_th3_bl0ck_und3r_min3d_s3cur1ty}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

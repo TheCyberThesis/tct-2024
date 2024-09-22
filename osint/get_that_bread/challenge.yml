@@ -1,0 +1,17 @@
+name: "Get That Bread"
+author: "Nynth"
+category: "OSINT"
+description: "my friend told me I can get some amazing bread at this mall, but he only sent me this image, help me find it!!!\n\n Flag Format: TCT{92.432,-19.623}(no space)"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+files:
+    - dist/get_that_bread.jpg
+
+state: visible
+version: "0.1"

@@ -1,0 +1,12 @@
+2024-08-03 10:15:00   INFO: System startup initiated
+2024-08-03 10:15:-17  WARNING: Unusual access attempt detected
+2024-08-03 10:15:17   INFO: User authentication successful
+2024-08-03 10:15:39   ERROR: Database connection failed
+2024-08-03 10:15:-51  INFO: Firewall rules updated
+2024-08-03 10:15:1    WARNING: High CPU usage detected
+2024-08-03 10:15:-5   INFO: Scheduled backup started
+2024-08-03 10:15:0    INFO: Backup completed successfully
+2024-08-03 10:15:01   WARNING: Low disk space on /dev/sda1
+2024-08-03 10:15:09   INFO: Software update available
+2024-08-03 10:15:47   ERROR: Critical service stopped unexpectedly
+2024-08-03 10:15:58   INFO: System shutdown initiated

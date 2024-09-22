@@ -1,0 +1,28 @@
+name: "Secret Mission"
+author: "Strangek"
+category: "misc"
+description: "Can you win this RACE against time and attempts??"
+value: 500
+type: container
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 100
+    image: latest
+    port: 5000
+
+image: ./src
+
+files:
+    - dist/main.py
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{c0ngr4t5_t1g3r_y0u_s70pp3d_7h3_4774ck}",
+        data: "case_sensitive",
+    }
+
+state: visible
+version: "0.1"

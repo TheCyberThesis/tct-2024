@@ -1,0 +1,19 @@
+name: "Ding Dong Bell"
+author: "Pickachu"
+category: "crypto"
+description: "In the midst of confusion, pause and remember: it's all part of the crypto"
+value: 500
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 25
+    minimum: 25
+
+
+flags:
+    - {
+        type: "static",
+        content: "TCT{Cryptographurr}",
+        data: "case_sensitive",
+    }
