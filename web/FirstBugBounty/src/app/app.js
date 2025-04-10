@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 const saltRounds = 10;
 
 // MongoDB connection string
-const uri = "mongodb+srv://omega:omega@session.h2xj5ap.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb";
 const client = new MongoClient(uri);
 
 // Email configuration
