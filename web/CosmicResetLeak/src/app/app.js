@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const saltRounds = 10;
 
-const uri = "mongodb+srv://omega:omega@session.h2xj5ap.mongodb.net/?retryWrites=true&w=majority";
+const uri "mongodb url";
 const client = new MongoClient(uri);
 
 const transporter = nodemailer.createTransport({
